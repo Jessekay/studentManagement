@@ -2,12 +2,33 @@ package com.example.Student.management.model;
 
 import java.util.UUID;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "academic_unit")
 public class AcademicUnit {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID Id;
+    @Column(name = "academic_code", nullable = false, unique = true)
     private String code;
+
     private String name;
+    @Enumerated(EnumType.STRING)
     private EAcademicUnitType type;
+    @ManyToOne
+    @JoinColumn(name = "parent")
     private AcademicUnit parent;
+    
     public UUID getId() {
         return Id;
     }
