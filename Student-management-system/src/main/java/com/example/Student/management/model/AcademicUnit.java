@@ -25,10 +25,11 @@ public class AcademicUnit {
     private String name;
     @Enumerated(EnumType.STRING)
     private EAcademicUnitType type;
+    
     @ManyToOne
     @JoinColumn(name = "parent")
     private AcademicUnit parent;
-    
+
     public UUID getId() {
         return Id;
     }
