@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.Student.management.model.AcademicUnit;
 
-public interface AcademiUnitRepository extends JpaRepository<AcademicUnit, UUID>{
+public interface AcademicUnitRepository extends JpaRepository<AcademicUnit, UUID>{
     Boolean existsByCode(String code);
 
     Optional<AcademicUnit> findByCode(String code); 
