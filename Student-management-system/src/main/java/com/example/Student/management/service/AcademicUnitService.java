@@ -3,10 +3,12 @@ package com.example.Student.management.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.Student.management.model.AcademicUnit;
 import com.example.Student.management.repository.AcademicUnitRepository;
 
+@Service
 public class AcademicUnitService {
     @Autowired
     private AcademicUnitRepository academicUnitRepository;

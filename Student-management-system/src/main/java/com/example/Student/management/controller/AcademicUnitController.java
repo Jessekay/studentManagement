@@ -2,6 +2,7 @@ package com.example.Student.management.controller;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ import com.example.Student.management.service.AcademicUnitService;
 @RequestMapping(value = "/api/academicUnit")
 public class AcademicUnitController {
 
+    @Autowired
     private AcademicUnitService academicUnitService;
 
     @PostMapping(value = "/save", consumes = MediaType.APPLICATION_JSON_VALUE,
