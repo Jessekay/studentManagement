@@ -30,9 +30,9 @@ public class AcademicUnitController {
         String response = academicUnitService.saveParent(academicUnit);
 
         if(response.equals("saved successfully")) {
-            return new ResponseEntity<>(response, HttpStatus.CREATED);
-        } else {
             return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+        } else {
+            return new ResponseEntity<>(response, HttpStatus.CREATED);
         }
     }
 
