@@ -18,8 +18,8 @@ import com.example.Student.management.model.AcademicUnit;
 import com.example.Student.management.service.AcademicUnitService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping(value = "/api/academicUnit")
+@CrossOrigin(origins = "http://localhost:3000")
 public class AcademicUnitController {
 
     @Autowired
