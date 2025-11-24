@@ -1,11 +1,15 @@
 package com.example.Student.management.service;
 
 import java.util.Optional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+// import com.example.Student.management.controller.List;
 import com.example.Student.management.model.AcademicUnit;
+import com.example.Student.management.model.EAcademicUnitType;
+import com.example.Student.management.model.EAcademicUnitType;
 import com.example.Student.management.repository.AcademicUnitRepository;
 
 @Service
@@ -52,5 +56,9 @@ public class AcademicUnitService {
 
     public Optional<AcademicUnit> getProgramByDepartmentCode(String code) {
         return academicUnitRepository.findByCode(code);
+    }
+
+    public List<AcademicUnit> findByType(String type){
+        return academicUnitRepository.findByType(EAcademicUnitType.valueOf(type));
     }
 }

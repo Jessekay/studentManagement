@@ -1,5 +1,6 @@
 package com.example.Student.management.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,6 +66,17 @@ public class AcademicUnitController {
         } else {
             return new ResponseEntity<>("Parent not found", HttpStatus.NOT_FOUND);
         }
+    }
+
+     @GetMapping(value = "/findByType", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> findByType(@RequestParam String type){
+       List<AcademicUnit> units = academicUnitService.findByType(type);
+
+       if(!units.isEmpty()){
+        return new ResponseEntity<>(units, HttpStatus.OK);
+       }else{
+        return new ResponseEntity<>("No academic units found for this type", HttpStatus.NOT_FOUND); 
+    }
     }
     
 }
